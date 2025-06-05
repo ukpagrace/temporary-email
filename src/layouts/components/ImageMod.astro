@@ -10,7 +10,7 @@ interface Props {
   height: number;
   loading?: "eager" | "lazy" | null | undefined;
   decoding?: "async" | "auto" | "sync" | null | undefined;
-  format?: "auto" | "avif" | "jpeg" | "png" | "svg" | "webp";
+  format?: "auto" | "avif" | "jpeg" | "png" | "svg" | "webp" | "mp4";
   class?: string;
   style?: any;
 }
@@ -43,18 +43,31 @@ const isValidPath = images[src] ? true : false;
   );
 ---
 
-{
-  isValidPath && (
-    <Image
-      src={images[src]() as Promise<{ default: ImageMetadata }>}
-      alt={alt}
-      width={width}
-      height={height}
-      loading={loading}
-      decoding={decoding}
-      class={className}
-      format={format}
-      style={style}
-    />
-  )
+{isValidPath && format !== "mp4" ? (
+  <Image
+    src={images[src]() as Promise<{ default: ImageMetadata }>}
+    alt={alt}
+    width={width}
+    height={height}
+    loading={loading}
+    decoding={decoding}
+    class={className}
+    format={format}
+    style={style}
+  />
+) : (
+  <video
+    src={src}
+    width={width}
+    height={height}
+    muted
+    autoplay
+    loop
+    playsinline
+    class={className}
+    style={style}
+  />
+)
+
 }
+

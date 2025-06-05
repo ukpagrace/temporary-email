@@ -1,8 +1,8 @@
 ---
 enable: true
-title: "Ready to build your next project with Astro?"
-image: "/images/call-to-action.png"
-description: "Experience the future of web development with Astroplate and Astro. Build lightning-fast static sites with ease and flexibility."
+title: "Ready to take control of your email?"
+image: "/images/cta.mp4"
+description: "Experience the smarter way to manage disposable email with Middlemail. Create fast, private, and flexible inboxes, with forwarding, expiration, and custom domains built in"
 button:
   enable: true
   label: "Get Started Now"

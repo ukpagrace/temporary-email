@@ -20,7 +20,7 @@ const { title, description, meta_title, image } = contact.data;
   image={image}
 >
   <PageHeader title={title} />
-  <section class="section-sm">
+  <!-- <section class="section-sm">
     <div class="container">
       <div class="row">
         <div class="mx-auto md:col-10 lg:col-6">
@@ -65,5 +65,123 @@ const { title, description, meta_title, image } = contact.data;
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
+
+  <section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="mx-auto md:col-10 lg:col-6">
+        <form action={contact_form_action} method="POST">
+          <!-- Basic Info -->
+          <div class="mb-6">
+            <label for="email" class="form-label">
+              Email address <span class="text-red-500">*</span>
+            </label>
+            <input
+              id="email"
+              name="email"
+              class="form-input"
+              placeholder="you@example.com"
+              type="email"
+              required
+            />
+          </div>
+
+          <div class="mb-6">
+            <label for="name" class="form-label">Name (optional)</label>
+            <input
+              id="name"
+              name="name"
+              class="form-input"
+              placeholder="Jane Doe"
+              type="text"
+            />
+          </div>
+
+          <!-- Q1: Why are you interested in Middlemail? -->
+          <div class="mb-6">
+            <label class="form-label">Why are you interested in Middlemail?</label>
+            <div class="space-y-2">
+              <div>
+                <input type="radio" id="q1-spam" name="why_interested" value="Avoid spam and protect inbox" />
+                <label for="q1-spam">I want to avoid spam and protect my real inbox</label>
+              </div>
+              <div>
+                <input type="radio" id="q1-trials" name="why_interested" value="Temporary email for trials/downloads" />
+                <label for="q1-trials">I need temporary email for trials/downloads</label>
+              </div>
+              <div>
+                <input type="radio" id="q1-forwarding" name="why_interested" value="Forward custom domain email" />
+                <label for="q1-forwarding">I want to forward custom domain email to my main inbox</label>
+              </div>
+              <div>
+                <input type="radio" id="q1-other" name="why_interested" value="Other" />
+                <label for="q1-other">Other:</label>
+                <input type="text" name="why_interested_other" class="form-input mt-2" placeholder="Your reason..." />
+              </div>
+            </div>
+          </div>
+
+          <!-- Q2: #1 Feature -->
+          <div class="mb-6">
+            <label class="form-label">What’s the #1 feature you care about?</label>
+            <div class="space-y-2">
+              <div>
+                <input type="radio" id="q2-expiring" name="top_feature" value="Auto-expiring inbox" />
+                <label for="q2-expiring">Auto-expiring inbox</label>
+              </div>
+              <div>
+                <input type="radio" id="q2-forwarding" name="top_feature" value="Email forwarding" />
+                <label for="q2-forwarding">Email forwarding</label>
+              </div>
+              <div>
+                <input type="radio" id="q2-domain" name="top_feature" value="Using my own domain" />
+                <label for="q2-domain">Using my own domain</label>
+              </div>
+              <div>
+                <input type="radio" id="q2-interface" name="top_feature" value="Simple inbox interface" />
+                <label for="q2-interface">Simple inbox interface</label>
+              </div>
+              <div>
+                <input type="radio" id="q2-privacy" name="top_feature" value="Privacy / no tracking" />
+                <label for="q2-privacy">Privacy / no tracking</label>
+              </div>
+              <div>
+                <input type="radio" id="q2-other" name="top_feature" value="Other" />
+                <label for="q2-other">Other:</label>
+                <input type="text" name="top_feature_other" class="form-input mt-2" placeholder="Your feature..." />
+              </div>
+            </div>
+          </div>
+
+          <!-- Q3: Open-ended -->
+          <div class="mb-6">
+            <label for="perfect_middlemail" class="form-label">
+              What would make Middlemail perfect for you?
+            </label>
+            <textarea
+              id="perfect_middlemail"
+              name="perfect_middlemail"
+              class="form-input"
+              placeholder="Tell us what would make it perfect for you..."
+              rows="6"
+            ></textarea>
+          </div>
+
+          <!-- Optional: Follow-up checkbox -->
+          <div class="mb-6">
+            <label class="form-label">
+              <input type="checkbox" name="open_to_feedback" />
+              I’d be open to sharing more feedback later
+            </label>
+          </div>
+
+          <!-- Submit -->
+          <button type="submit" class="btn btn-primary">Join Waitlist</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
 </Base>
